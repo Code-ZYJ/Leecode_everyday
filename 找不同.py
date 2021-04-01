@@ -1,0 +1,35 @@
+'''
+给定两个字符串 s 和 t，它们只包含小写字母。
+
+字符串 t 由字符串 s 随机重排，然后在随机位置添加一个字母。
+
+请找出在 t 中被添加的字母。
+
+ 
+
+示例 1：
+
+输入：s = "abcd", t = "abcde"
+输出："e"
+解释：'e' 是那个被添加的字母。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/find-the-difference
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+'''
+class Solution(object):
+    def findTheDifference(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: str
+        """
+        l_s = list(s)
+        for word in list(t):
+            if word in l_s:
+                l_s.remove(word)
+            else:
+                return word
+s = "abcd"
+t = "abcde"
+Solution().findTheDifference(s,t)
